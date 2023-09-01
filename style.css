@@ -6,16 +6,20 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
 }
 
 header {
-    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
     background-color: gray;
 }
 
 nav {
-    height: 50px;
+    height: 30px;
+    background-color: rgb(72, 78, 83);
 }
 
 nav menu {
@@ -23,31 +27,54 @@ nav menu {
 }
 
 nav ul {
-    
     display: flex;
     list-style-type: none;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 10px;
     justify-content: space-evenly;
+    color: rgb(202, 202, 202);
+
+}
+
+nav ul li {
+    cursor: pointer;
+    user-select: none;
 }
 
 section {
     height: 100vh;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.329);
 }
 
-.inicio {
+.contaier-inicio {
+    margin-top: 50px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-.apresentação {
-    background-color: blue;
-    /* min-width: 600px; */
+.apresentacao {
+    background-color: rgba(128, 128, 128, 0.582);
     height: 400px;
+    width: 600px;
 }
 
-.inscrição {
+.inscricao {
+    display: flex;
+    flex-direction: column;
     height: 400px;
+    width: 400px;
+    align-items: center;
+}
+
+.inscricao button {
+    background-color: rgb(116, 196, 116);
+    height: 40px;
+    width: 140px;
+    cursor: pointer;
 }
 
 
@@ -55,38 +82,45 @@ section {
 
 
 @media (max-width: 600px) {
-    
+
     nav {
-        background-color: rgb(72, 78, 83);
         height: 20px;
         display: flex;
         flex-direction: row-reverse;
-        
     }
 
     nav menu {
-        display: block;
+        display: flex;
         width: 0px;
         z-index: 100;
-        transition: all 0.1s ease-in-out;
+        transition: all 0.12s ease-in-out;
+        flex-direction: row-reverse;
     }
 
     nav menu.ativo {
+        display: block;
         width: 200px;
-        transition: all 0.1s ease-in-out;
+        flex-direction: row;
     }
 
     nav ul {
         background-color: rgb(72, 78, 83);
         align-items: flex-start;
-        padding: 15px;
+        padding: 0;
         justify-content: space-evenly;
         flex-direction: column;
+        overflow: hidden;
+        z-index: -10;
+        transition: all 0.15s ease-in-out;
     }
 
     nav li {
-        padding: 10px;  
+        padding: 15px;
         color: rgb(194, 194, 194);
+    }
+
+    menu.ativo ul {
+        padding: 15px;
     }
 
     .navBotão {
@@ -100,8 +134,27 @@ section {
         transition: all 0.2s ease-out;
     }
 
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger div {
+        height: 6px;
+        width: 28px;
+        background-color: rgb(109, 109, 109);
+        margin: 3px;
+        border-radius: 5px;
+    }
+
     .navBotão.ativo {
         translate: 50% -35%;
+    }
+
+    .contaier-inicio {
+        margin: 0;
     }
 
 }
