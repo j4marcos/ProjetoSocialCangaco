@@ -1,0 +1,124 @@
+:root {
+    --bg-main-color: #0F4B93;
+    --bg-secondary-color: #105DB9;
+    --e-main-color:#FEBF2C ;
+    --e-secondary-color:#ED4D19 ;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 100vw;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding: 20px;
+    
+}
+
+nav li {
+    margin:auto 5% ;
+    color: white;
+    font-size: 1.5rem;
+    list-style-type: none;
+}
+
+
+
+.background.page1 {
+    position: relative;
+    background-image: url("../imgs/bg1/bg1-beach.jpg"); 
+    background-size: cover;
+    background-position: center 0px;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.background.page1:before {
+    position: absolute;
+    content:"";
+    background-image: url("../imgs/bg1/bg1-woman.png"); 
+    background-size: cover;
+    background-position: center 0px;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    top: 50px;
+    left: 20px;
+    transition: all 1.5s ease-in-out;
+}
+
+.background.active.page1:before {
+    top: 0px;
+    left: 0px;
+}
+
+.background.page1::after {
+    position: absolute;
+    content:"";
+    background-image: url("../imgs/bg1/bg1-ball.png"); 
+    background-size: cover;
+    background-position: center 0px;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    top: -90px;
+    left: -20px;
+    scale: 0.9;
+    transition: all 1.5s ease-in-out;
+}
+
+.background.active.page1::after {
+    top: 0px;
+    left: 0px;
+    scale: 1;
+}
+
+
+section.page1::after {
+    position: absolute;
+    content:"";
+    height:100vh;
+    width:100vw;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, var(--bg-main-color) 100%);
+    /* z-index: 10; */
+}
+
+section.page1::before {
+    position: absolute;
+    content:"";
+    height:100vh;
+    width:110vw;
+    top: 50px;
+    left: 0px;
+    background-color: var(--bg-main-color) ;
+    rotate: 2deg;
+    z-index: -5;
+    
+}
+
+section.page2 {
+    height: 100vh;
+    width: 100vw;
+}
